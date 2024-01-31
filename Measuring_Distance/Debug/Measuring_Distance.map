@@ -84,64 +84,11 @@ Discarded input sections
  .text          0x00000000        0x0 APP/Measuring_Distance/Measuring_Distance.o
  .data          0x00000000        0x0 APP/Measuring_Distance/Measuring_Distance.o
  .bss           0x00000000        0x0 APP/Measuring_Distance/Measuring_Distance.o
- .text          0x00000000        0x0 HAL/Buzzer/Buzzer_Core.o
- .data          0x00000000        0x0 HAL/Buzzer/Buzzer_Core.o
- .bss           0x00000000        0x0 HAL/Buzzer/Buzzer_Core.o
- .text.Buzzer_ON
-                0x00000000        0xa HAL/Buzzer/Buzzer_Core.o
- .text.Buzzer_OFF
-                0x00000000        0xa HAL/Buzzer/Buzzer_Core.o
- .text.Buzzer_TGL
-                0x00000000        0x8 HAL/Buzzer/Buzzer_Core.o
- .debug_info    0x00000000      0x11d HAL/Buzzer/Buzzer_Core.o
- .debug_abbrev  0x00000000       0x7c HAL/Buzzer/Buzzer_Core.o
- .debug_aranges
-                0x00000000       0x30 HAL/Buzzer/Buzzer_Core.o
- .debug_ranges  0x00000000       0x20 HAL/Buzzer/Buzzer_Core.o
- .debug_line    0x00000000       0x97 HAL/Buzzer/Buzzer_Core.o
- .debug_str     0x00000000      0x1ea HAL/Buzzer/Buzzer_Core.o
- .comment       0x00000000       0x31 HAL/Buzzer/Buzzer_Core.o
- .debug_frame   0x00000000       0x44 HAL/Buzzer/Buzzer_Core.o
  .text          0x00000000        0x0 HAL/LCD/LCD_Core.o
  .data          0x00000000        0x0 HAL/LCD/LCD_Core.o
  .bss           0x00000000        0x0 HAL/LCD/LCD_Core.o
  .text.LCD_WriteCustomCharacter
                 0x00000000       0x5a HAL/LCD/LCD_Core.o
- .text          0x00000000        0x0 HAL/LED/LED_Core.o
- .data          0x00000000        0x0 HAL/LED/LED_Core.o
- .bss           0x00000000        0x0 HAL/LED/LED_Core.o
- .text.LED_Init
-                0x00000000        0x4 HAL/LED/LED_Core.o
- .text.LED_ON   0x00000000        0xa HAL/LED/LED_Core.o
- .text.LED_OFF  0x00000000        0xa HAL/LED/LED_Core.o
- .text.LED_TGL  0x00000000        0x8 HAL/LED/LED_Core.o
- .text.Red_LED_ON
-                0x00000000        0xa HAL/LED/LED_Core.o
- .text.Green_LED_ON
-                0x00000000        0xa HAL/LED/LED_Core.o
- .text.Blue_LED_ON
-                0x00000000        0xa HAL/LED/LED_Core.o
- .text.Red_LED_OFF
-                0x00000000        0xa HAL/LED/LED_Core.o
- .text.Green_LED_OFF
-                0x00000000        0xa HAL/LED/LED_Core.o
- .text.Blue_LED_OFF
-                0x00000000        0xa HAL/LED/LED_Core.o
- .text.Red_LED_TGL
-                0x00000000        0x8 HAL/LED/LED_Core.o
- .text.GREEN_LED_TGL
-                0x00000000        0x8 HAL/LED/LED_Core.o
- .text.Blue_LED_TGL
-                0x00000000        0x8 HAL/LED/LED_Core.o
- .debug_info    0x00000000      0x2d6 HAL/LED/LED_Core.o
- .debug_abbrev  0x00000000       0xa1 HAL/LED/LED_Core.o
- .debug_aranges
-                0x00000000       0x80 HAL/LED/LED_Core.o
- .debug_ranges  0x00000000       0x70 HAL/LED/LED_Core.o
- .debug_line    0x00000000      0x181 HAL/LED/LED_Core.o
- .debug_str     0x00000000      0x25c HAL/LED/LED_Core.o
- .comment       0x00000000       0x31 HAL/LED/LED_Core.o
- .debug_frame   0x00000000       0xe4 HAL/LED/LED_Core.o
  .text          0x00000000        0x0 HAL/ULTRASONIC/ULTRASONIC_Core.o
  .data          0x00000000        0x0 HAL/ULTRASONIC/ULTRASONIC_Core.o
  .bss           0x00000000        0x0 HAL/ULTRASONIC/ULTRASONIC_Core.o
@@ -318,9 +265,7 @@ LOAD APP/CFGH/HAL_CFG/LCD_CFG.o
 LOAD APP/CFGH/MCAL_CFG/PORT_LCFG.o
 LOAD APP/MAIN/main.o
 LOAD APP/Measuring_Distance/Measuring_Distance.o
-LOAD HAL/Buzzer/Buzzer_Core.o
 LOAD HAL/LCD/LCD_Core.o
-LOAD HAL/LED/LED_Core.o
 LOAD HAL/ULTRASONIC/ULTRASONIC_Core.o
 LOAD MCAL/DIO/DIO_Core.o
 LOAD MCAL/GBT/GPT_Core.o

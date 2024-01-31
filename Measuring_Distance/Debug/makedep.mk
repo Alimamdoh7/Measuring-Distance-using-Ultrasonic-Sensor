@@ -12,11 +12,7 @@ APP\MAIN\main.c
 
 APP\Measuring_Distance\Measuring_Distance.c
 
-HAL\Buzzer\Buzzer_Core.c
-
 HAL\LCD\LCD_Core.c
-
-HAL\LED\LED_Core.c
 
 HAL\ULTRASONIC\ULTRASONIC_Core.c
 
