@@ -45,7 +45,7 @@ SUBDIRS :=  \
 ../LIB/ \
 ../MCAL/ \
 ../MCAL/DIO/ \
-../MCAL/GBT/ \
+../MCAL/GPT \
 ../MCAL/ICU/ \
 ../MCAL/IRQH/ \
 ../MCAL/PORT/
@@ -61,7 +61,7 @@ C_SRCS +=  \
 ../HAL/LCD/LCD_Core.c \
 ../HAL/ULTRASONIC/ULTRASONIC_Core.c \
 ../MCAL/DIO/DIO_Core.c \
-../MCAL/GBT/GPT_Core.c \
+../MCAL/GPT/GPT_Core.c \
 ../MCAL/ICU/ICU_Core.c \
 ../MCAL/IRQH/IRQH_Core.c \
 ../MCAL/PORT/PORT_Core.c
@@ -82,7 +82,7 @@ APP/Measuring_Distance/Measuring_Distance.o \
 HAL/LCD/LCD_Core.o \
 HAL/ULTRASONIC/ULTRASONIC_Core.o \
 MCAL/DIO/DIO_Core.o \
-MCAL/GBT/GPT_Core.o \
+MCAL/GPT/GPT_Core.o \
 MCAL/ICU/ICU_Core.o \
 MCAL/IRQH/IRQH_Core.o \
 MCAL/PORT/PORT_Core.o
@@ -96,7 +96,7 @@ APP/Measuring_Distance/Measuring_Distance.o \
 HAL/LCD/LCD_Core.o \
 HAL/ULTRASONIC/ULTRASONIC_Core.o \
 MCAL/DIO/DIO_Core.o \
-MCAL/GBT/GPT_Core.o \
+MCAL/GPT/GPT_Core.o \
 MCAL/ICU/ICU_Core.o \
 MCAL/IRQH/IRQH_Core.o \
 MCAL/PORT/PORT_Core.o
@@ -110,7 +110,7 @@ APP/Measuring_Distance/Measuring_Distance.d \
 HAL/LCD/LCD_Core.d \
 HAL/ULTRASONIC/ULTRASONIC_Core.d \
 MCAL/DIO/DIO_Core.d \
-MCAL/GBT/GPT_Core.d \
+MCAL/GPT/GPT_Core.d \
 MCAL/ICU/ICU_Core.d \
 MCAL/IRQH/IRQH_Core.d \
 MCAL/PORT/PORT_Core.d
@@ -124,7 +124,7 @@ APP/Measuring_Distance/Measuring_Distance.d \
 HAL/LCD/LCD_Core.d \
 HAL/ULTRASONIC/ULTRASONIC_Core.d \
 MCAL/DIO/DIO_Core.d \
-MCAL/GBT/GPT_Core.d \
+MCAL/GPT/GPT_Core.d \
 MCAL/ICU/ICU_Core.d \
 MCAL/IRQH/IRQH_Core.d \
 MCAL/PORT/PORT_Core.d
@@ -146,84 +146,84 @@ LINKER_SCRIPT_DEP+=
 APP/CFGH/HAL_CFG/KeyPad_LCFG.o: ../APP/CFGH/HAL_CFG/KeyPad_LCFG.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/GBT" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance" -I"../MCAL/GPT"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 APP/CFGH/HAL_CFG/LCD_CFG.o: ../APP/CFGH/HAL_CFG/LCD_CFG.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/GBT" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance" -I"../MCAL/GPT"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 APP/CFGH/MCAL_CFG/PORT_LCFG.o: ../APP/CFGH/MCAL_CFG/PORT_LCFG.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/GBT" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance" -I"../MCAL/GPT"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 APP/MAIN/main.o: ../APP/MAIN/main.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/GBT" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance" -I"../MCAL/GPT"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 APP/Measuring_Distance/Measuring_Distance.o: ../APP/Measuring_Distance/Measuring_Distance.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/GBT" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance" -I"../MCAL/GPT"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 HAL/LCD/LCD_Core.o: ../HAL/LCD/LCD_Core.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/GBT" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance" -I"../MCAL/GPT"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 HAL/ULTRASONIC/ULTRASONIC_Core.o: ../HAL/ULTRASONIC/ULTRASONIC_Core.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/GBT" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance" -I"../MCAL/GPT"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 MCAL/DIO/DIO_Core.o: ../MCAL/DIO/DIO_Core.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/GBT" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance" -I"../MCAL/GPT"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-MCAL/GBT/GPT_Core.o: ../MCAL/GBT/GPT_Core.c
+MCAL/GPT/GPT_Core.o: ../MCAL/GPT/GPT_Core.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/GBT" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance" -I"../MCAL/GPT"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 MCAL/ICU/ICU_Core.o: ../MCAL/ICU/ICU_Core.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/GBT" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance" -I"../MCAL/GPT"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 MCAL/IRQH/IRQH_Core.o: ../MCAL/IRQH/IRQH_Core.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/GBT" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance" -I"../MCAL/GPT"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 MCAL/PORT/PORT_Core.o: ../MCAL/PORT/PORT_Core.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/GBT" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../APP/CFGH/HAL_CFG" -I"../APP/CFGH/MCAL_CFG" -I"../APP/MAIN" -I"../HAL/Buzzer" -I"../HAL/LCD" -I"../HAL/LED" -I"../HAL/ULTRASONIC" -I"../LIB" -I"../MCAL/DIO" -I"../MCAL/ICU" -I"../MCAL/IRQH" -I"../MCAL/PORT" -I"../APP/Measuring_Distance" -I"../MCAL/GPT"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 

@@ -19,7 +19,7 @@ APP/MAIN/main.d APP/MAIN/main.o: ../APP/MAIN/main.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\version.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
- ../MCAL/GBT/GPT_Core.h ../APP/CFGH/MCAL_CFG/GPT_CFG.h \
+ ../MCAL/GPT/GPT_Core.h ../APP/CFGH/MCAL_CFG/GPT_CFG.h \
  ../HAL/ULTRASONIC/ULTRASONIC_Core.h ../MCAL/ICU/ICU_Core.h
 
 ../APP/Measuring_Distance/Measuring_Distance.h:
@@ -76,7 +76,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h:
 
-../MCAL/GBT/GPT_Core.h:
+../MCAL/GPT/GPT_Core.h:
 
 ../APP/CFGH/MCAL_CFG/GPT_CFG.h:
 
